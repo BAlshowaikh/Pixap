@@ -42,6 +42,10 @@ Pixap is a quiz-based game to enhance HTML skills for beginners. It's served as 
 * [Resource two:](Link)
 * [Resource three:](Link)
 
+## Wireframes:
+![Main page](image.png)
+![Mind map section](image-1.png)
+
 ## 👩‍💻 Author
 This project is created by @BAlshowaikh.<br>
 [LinkedIn](www.linkedin.com/in/batoolalshowaikh) | [GitHub](https://github.com/BAlshowaikh)
