@@ -1,4 +1,4 @@
-# 🚀 Pixap
+# 🚀 Pixap Game
 Date: 22 - Sep - 2025
 
 ## 📝 Project Description
