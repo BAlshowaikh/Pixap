@@ -1,0 +1,26 @@
+{
+  "1": {
+    "title": "Level 1: HTML Structure Basics",
+    "iconClass": "bi-code-slash",
+    "paragraph": "This level covers the fundamental elements of an HTML page: the <!DOCTYPE>, <html>, <head>, and <body> tags. Understanding this foundation is crucial before adding content.",
+    "buttonLink": "quiz-1.html"
+  },
+  "2": {
+    "title": "Level 2: Text Formatting & Semantics",
+    "iconClass": "bi-type",
+    "paragraph": "Dive into essential text elements like headings (<h1>-<h6>), paragraphs (<p>), and the semantic structure of your content. Learn when and how to properly use <strong> and <em>.",
+    "buttonLink": "quiz-2.html"
+  },
+  "3": {
+    "title": "Level 3: Links and Navigation",
+    "iconClass": "bi-link-45deg",
+    "paragraph": "Master the anchor tag (<a>) to create internal and external links. We'll cover attributes like href, target, and the basics of relative vs. absolute paths.",
+    "buttonLink": "quiz-3.html"
+  },
+  "4": {
+    "title": "Level 4: Images and Media",
+    "iconClass": "bi-image",
+    "paragraph": "This final section focuses on integrating visual content using the <img> tag. You'll learn about src, alt text (for accessibility), and basic image sizing.",
+    "buttonLink": "quiz-4.html"
+  }
+}

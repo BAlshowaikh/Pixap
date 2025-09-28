@@ -1,0 +1,244 @@
+:root {
+  --bs-heading-font-family: [ "Frijole", sans];
+}
+
+body {
+  /* Syntax of the radial-gradient func
+        $$\text{radial-gradient( [shape] [at position], color-stop_1, color-stop_2, ...)}$$
+     */
+  background: radial-gradient(circle at center, #1a0f30 0%, #0d061f 50%);
+  color: white;
+  height: 100vh;
+  font-family: "Irish Grover", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Frijole", sans;
+  letter-spacing: 0.3em;
+}
+
+.btn-primary {
+  background: linear-gradient(to bottom, #0c04f8, #8c1cee);
+  border-radius: 5vh;
+  padding: 2vh;
+  font-size: 3vh;
+  transition: transform 0.2s;
+  box-shadow: 0 5px 15px rgba(140, 28, 238, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px); /* Interactive effect */
+}
+
+/* Style for map page */
+/* Notes to me:
+* absolutely positioned element starts its life at the top-left corner of its relative parent
+* A negative value means the element moves outside the parent container
+
+* box-shadow:
+    - Horizontal Offset:How far the shadow shifts left (negative) or right (positive).
+	- Vertical Offset:How far the shadow shifts up (negative) or down (positive). 0: No vertical shift. The shadow is centered.
+-   Blur Radius: How soft and spread out the shadow is. A higher value means a softer, wider glow.
+    - Spread Radius:How much the shadow expands or contracts in size before the blur starts.
+    - Color: The color and opacity of the shadow.
+*/
+
+/* ---------------------------------------------------------------Map page-------------------------------------------------------------------------*/
+
+#main-map {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+}
+
+.node-arm {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-node {
+  width: 6vw;
+  height: 6vw;
+  border-radius: 50%;
+
+  /* Background and glow color */
+  background-color: #ffffff;
+  box-shadow: 0 0 20px 5px rgba(160, 0, 255, 0.8);
+  overflow: visible;
+}
+
+#node-arm-top {
+  flex-direction: column-reverse;
+  top: 0vh;
+  left: 50%;
+  /* Shifts the element back by half its own width*/
+  transform: translateX(-50%);
+}
+
+#node-arm-right {
+  flex-direction: row;
+  top: 50%;
+  right: 15vw;
+  /* Shifts the element back by half its own height, PLUS half the main node's height (3vw) */
+  transform: translateY(-50%);
+}
+
+#node-arm-bottom {
+  flex-direction: column;
+  bottom: 0vh;
+  left: 50%;
+  /* Shifts the element back by half its own width, PLUS half the main node's width (3vw) */
+  transform: translateX(-50%);
+}
+
+#node-arm-left {
+  flex-direction: row-reverse;
+  top: 50%;
+  left: 15vw;
+  /* Shifts the element back by half its own height, PLUS half the main node's height (3vw) */
+  transform: translateY(-50%);
+}
+
+.side-node {
+  /* position: absolute; */
+  width: 1.5vw;
+  height: 1.5vw;
+  border-radius: 50%;
+
+  background-color: #ffffff;
+  box-shadow: 0 0 5px 3px rgba(0, 255, 255, 0.7);
+}
+
+.node-path-container {
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#node-arm-top .node-path-container,
+#node-arm-bottom .node-path-container {
+  flex-direction: column;
+  height: 30vh;
+  width: 2vw;
+}
+
+/* Horizontal Paths (Left and Right arms) */
+#node-arm-left .node-path-container,
+#node-arm-right .node-path-container {
+  flex-direction: row;
+  width: 18vw;
+  height: 2vw;
+}
+
+/* Style the connected line for the nodes*/
+/* Notes to me:
+* You can add a pseudo-element (::before or ::after) whenever you want a purely visual element that isn't part of your HTML structure or content
+*/
+
+.node-path-container::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 255, 255, 0.4);
+
+  /* Center the pseudo-element within its parent */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* Vertical Paths (Top/Bottom) */
+#node-arm-top .node-path-container::after,
+#node-arm-bottom .node-path-container::after {
+  width: 2px;
+  height: 90%;
+}
+
+/* Horizontal Paths */
+#node-arm-left .node-path-container::after,
+#node-arm-right .node-path-container::after {
+  height: 2px;
+  width: 100%;
+}
+
+/*Style for the large nodes as they are links */
+.main-node-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s;
+}
+
+.main-node-link:hover {
+  transform: scale(1.3);
+}
+
+/*----------------------------------------------------------------Level page-----------------------------------------------------------------------*/
+/* .level-intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+} */
+
+.level-intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 5vh;
+}
+
+#level-icon {
+  font-size: 15vw;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#level-title {
+    font-family: "Frijole", sans;
+    font-size: 4vw;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+#level-paragraph {
+    font-family: "Luckiest Guy", sans-serif;
+    font-size: 1.5vw;
+    color: #FFFFFF;
+    max-width: 80vw;
+    /* line-height: 1.6; */
+    margin-bottom: 60px;
+    letter-spacing: 0.2vw;
+}
+
+#top-level-label {
+    position: absolute;
+    top: 1vh;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+/* Style the Level text itself (should use a distinct font/size) */
+#level-num-label {
+    font-family: "Luckiest Guy", sans-serif;
+    font-size: 2vw;
+    color: #FFFFFF;
+}
+
