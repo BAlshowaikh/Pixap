@@ -68,6 +68,9 @@ h6 {
 }
 
 .main-node {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 6vw;
   height: 6vw;
   border-radius: 50%;
@@ -207,18 +210,18 @@ h6 {
 #level-icon {
   font-size: 15vw;
   color: #ffffff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
-#level-title {
+/* #level-title {
     font-family: "Frijole", sans;
     font-size: 4vw;
     color: #FFFFFF;
     margin-bottom: 30px;
-}
+} */
 
 #level-paragraph {
-    font-family: "Luckiest Guy", sans-serif;
+    font-family: "Irish Grover", sans-serif;
     font-size: 1.5vw;
     color: #FFFFFF;
     max-width: 80vw;
@@ -235,10 +238,9 @@ h6 {
     text-align: center;
 }
 
-/* Style the Level text itself (should use a distinct font/size) */
+/* Style the Level text itself  */
 #level-num-label {
     font-family: "Luckiest Guy", sans-serif;
     font-size: 2vw;
     color: #FFFFFF;
 }
-
