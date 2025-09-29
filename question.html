@@ -10,6 +10,11 @@
       crossorigin="anonymous"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
     <link rel="stylesheet" href="./styles/style.css" />
 
     <!-- Links for the fonts-->
@@ -25,10 +30,70 @@
       href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Questions Portal</title>
   </head>
-  <body>
-    
+  <body
+    class="d-flex flex-column justify-content-center align-items-center vh-100"
+  >
+    <header class="position-fixed top-0 start-0 p-3 z-3 m-0">
+      <div id="score-display">
+        <i class="bi bi-star-fill text-warning fs-3"> 1234 PX</i>
+      </div>
+    </header>
+
+    <!-- This will contain the two panels-->
+    <div
+      class="container-fluid d-flex justify-content-center align-items-center px-4"
+    >
+      <div class="row w-100 h-100 question-layout-row">
+        <!-- Code panel will take the 3/4 of the page-->
+        <div class="col-md-6">
+          <div class="code-panel d-flex flex-column justify-content-center align-items-center">
+            <h3 class="panel-header">Your Code</h3>
+
+            <div
+              id="code-editior"
+              class="d-flex flex-column align-items-center"
+            >
+              <div class="window-controls">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <textarea
+                id="code-input"
+                rows="10"
+                placeholder="Type your HTML here..."
+              ></textarea>
+            </div>
+            <button id="run-code-btn" class="btn btn-primary mt-3">Run Code</button>
+          </div>
+        </div>
+
+        <!-- Instruction panel that will take 1/4 of the page -->
+        <div class="col-md-6">
+          <div class="instruction-panel">
+            <h3 class="panel-header">Instructions</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="navigation-buttons" class="d-flex justify-content-center gap-5">
+      <button id="prev-btn" class="btn btn-primary">
+        <i class="bi bi-chevron-left"></i> Previous
+      </button>
+      <button id="next-btn" class="btn btn-primary">
+        Next <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
