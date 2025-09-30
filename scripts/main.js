@@ -21,11 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) {
         throw new Error(`HTTP error. Status: ${response.status}`)
       }
+      // Start the process of reading the data body as JSON and parse to JavaScript object
       return response.json()
     })
-
     .then((data) => {
       const levelData = data[levelId]
+      console.log(levelData)
 
       if (!levelData) {
         console.error(`Data for Level ID ${levelId} not found.`)
@@ -36,7 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("level-paragraph").textContent =
         levelData.paragraph
       document.getElementById("level-icon").classList.add(levelData.iconClass)
-      document.getElementById('level-num-label').textContent = `Level ${levelId}`;
-      // document.getElementById('start-quiz-button').href = levelData.buttonLink;
+      document.getElementById(
+        "level-num-label"
+      ).textContent = `Level ${levelId}`
+      document.getElementById(
+        "start-quiz-button"
+      ).href = `http://127.0.0.1:5500/question.html?level=${levelId}`
     })
 })
