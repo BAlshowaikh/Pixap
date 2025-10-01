@@ -58,7 +58,10 @@
           <div
             class="code-panel d-flex flex-column justify-content-center align-items-center"
           >
-            <h3 class="panel-header">Your Code</h3>
+            <div class="header-content d-flex gap-3 justify-content-center">
+              <i class="bi bi-laptop fs-2"></i>
+              <h3 class="panel-header">Your Code</h3>
+            </div>
 
             <div
               id="code-editior"
@@ -84,9 +87,14 @@
         <!-- Instruction panel that will take 1/4 of the page -->
         <div class="col-md-6">
           <div class="instruction-panel">
-            <h3 class="panel-header">Instructions</h3>
+            <div class="header-content d-flex gap-3 justify-content-center">
+              <i class="bi bi-info-circle fs-5 text-info"></i>
+              <h3 class="panel-header">Instruction</h3>
+            </div>
 
-            <div id="content-area">
+            <div
+              id="content-area d-flex flex-column align-items-start justify-content-center"
+            >
               <div id="question-title"></div>
               <div id="instruction-text"></div>
             </div>
@@ -97,7 +105,7 @@
               id="question-dots"
               class="d-flex justify-content-center mt-auto gap-3"
             >
-              <span class="q-dot active" data-index="0"></span>
+              <span class="q-dot" data-index="0"></span>
               <span class="q-dot" data-index="1"></span>
               <span class="q-dot" data-index="2"></span>
               <span class="q-dot" data-index="3"></span>

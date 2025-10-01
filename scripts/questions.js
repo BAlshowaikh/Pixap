@@ -40,6 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("instruction-text").textContent =
           step.instruction
         document.getElementById("code-input").value = step.initial_code
+        dots.forEach((dot) => {
+          dot.title = `Click to jump to ${step.index+1}.`
+        })
+
       }
 
       // Function to manage the dots
