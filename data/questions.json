@@ -19,7 +19,7 @@
       "instruction": "Every modern HTML document must start with the Doctype declaration. Add the necessary tag to indicate this document is HTML5.",
       "character_hint": "It's the very first thing the browser reads! It doesn't need a closing tag.",
       "initial_code": "",
-      "expected_code": "<!DOCTYPE html>",
+      "expected_code": "<!doctype html>",
       "run_output_message": "Doctype added successfully. Now add the root element."
     },
 
@@ -43,7 +43,7 @@
       "instruction": "Inside the root tag, you must define the two main sections: the container for metadata (head) and the container for visible content (body). Add both!",
       "character_hint": "The 'head' is for information *about* the page, the 'body' is for the visible stuff.",
       "initial_code": "<!DOCTYPE html>\n<html>\n\n</html>",
-      "expected_code": "<head></head><body></body>", 
+      "expected_code": "<head></head><body></body>",
       "run_output_message": "You've completed the basic HTML structure! That's Level 1 done!"
     }
   ]
