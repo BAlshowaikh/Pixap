@@ -78,7 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isSuccess) {
           score += 10
           scoreHTML.textContent = ` ${score} PX`
-          // Show for 20 seconds
+          // Store it so we can access the score from all pages
+          localStorage.setItem('userScore', score);
+          // Show for 5 seconds
           setTimeout(() => {
             messageOverlay.classList.add("d-none")
             advanceStep()
@@ -119,8 +121,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // Collapse multiple whitespace characters (spaces, tabs) into a single space
         // The \s+ regex matches one or more whitespace characters.
         newCode = newCode.replace(/\s+/g, " ")
-
-        return newCode.trim()
+        newCode = newCode.replace(/\s*([<>])\s*/g, '$1')
+        newCode = newCode.trim()
+        // console.log(newCode)
+        return newCode
       }
 
       // Call the functions to load the very first step (index 0)

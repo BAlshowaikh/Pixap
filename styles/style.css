@@ -79,6 +79,29 @@ h6 {
   background-color: #ffffff;
   box-shadow: 0 0 20px 5px rgba(160, 0, 255, 0.8);
   overflow: visible;
+
+  transition: transform 0.2s;
+}
+
+/* .locked {
+  background-color: black;
+  cursor: default;
+  pointer-events: none;
+} */
+
+.main-node:hover {
+  transform: scale(1.3);
+}
+
+/* Apply this CSS rule */
+.main-node.locked {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.disabled-link {
+  pointer-events: none;
+  cursor: default;
 }
 
 #node-arm-top {
@@ -121,6 +144,10 @@ h6 {
 
   background-color: #ffffff;
   box-shadow: 0 0 5px 3px rgba(0, 255, 255, 0.7);
+}
+
+.side-node.fill{
+   background-color: rgba(0, 255, 255);
 }
 
 .node-path-container {
@@ -184,9 +211,9 @@ h6 {
   transition: transform 0.2s;
 }
 
-.main-node-link:hover {
-  transform: scale(1.3);
-}
+/* .main-node-link:hover { */
+/* transform: scale(1.3); */
+/* } */
 
 /*----------------------------------------------------------------Level page-----------------------------------------------------------------------*/
 /* .level-intro-content {
@@ -356,24 +383,23 @@ h6 {
   border-radius: 50%;
 }
 
-.q-dot.active{
+.q-dot.active {
   background: linear-gradient(to bottom, #0c04f8, #8c1cee);
 }
 
-.q-dot:hover{
+.q-dot:hover {
   cursor: pointer;
-
 }
 
-#question-title{
+#question-title {
   font-family: "Anybody", sans;
   font-size: 2.5vw;
   margin-bottom: 2.5vw;
 }
 
-#instruction-text{
+#instruction-text {
   font-family: "Open Sans", sans;
-   font-size: 1.8vw;
+  font-size: 1.8vw;
 }
 
 /* Div to show a feedback to user once the code run */
