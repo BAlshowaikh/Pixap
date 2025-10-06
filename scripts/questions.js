@@ -1,13 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const url = new URLSearchParams(window.location.search)
   const levelId = url.get("level")
-  let currentStepIndex = 0
   const dots = document.querySelectorAll(".q-dot")
   const messageOverlay = document.querySelector("#message-overlay")
   const messageText = document.querySelector("#message-text")
   const runCodeBtn = document.getElementById("run-code-btn")
   const scoreHTML = document.getElementById("score")
   const codeInput = document.getElementById("code-input")
+  const charArea = document.getElementById("character-area-show")
+  const storedChar = localStorage.getItem("userCharacter")
+
+  let currentStepIndex = 0
   let score = 0
 
   // This will hold the level info once it has been fetched
@@ -36,6 +39,18 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error(`Data for Level ID ${levelId} not found.`)
         return
       }
+      // Function to handle character retreival
+      const showChar = () => {
+        console.log("Inside showChar fun")
+        if (storedChar != null) {
+          console.log("Inside showChar if stat fun")
+          const charElement = document.createElement("img")
+          charElement.src = `../resources/images/${storedChar}.png`
+          charElement.classList.add('selected-character-img');
+          charArea.appendChild(charElement)
+        }
+      }
+
       // If no errors found, update html
       const loadStepContent = (clickedDotIndex) => {
         const step = levelData[clickedDotIndex]
@@ -145,6 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Call the functions to load the very first step (index 0)
       loadStepContent(currentStepIndex)
       updateNavigationDots(currentStepIndex)
+      showChar()
 
       // Loop through the dots and update the content based on the clicked dot
       dots.forEach((dot) => {
