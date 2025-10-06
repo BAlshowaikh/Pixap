@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
           score += 10
           scoreHTML.textContent = ` ${score} PX`
           // Store it so we can access the score from all pages
-          localStorage.setItem('userScore', score);
+          localStorage.setItem("userScore", score)
           // Show for 5 seconds
           setTimeout(() => {
             messageOverlay.classList.add("d-none")
@@ -96,8 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Define a function to handle the code checker
       const checkUserCode = () => {
         const step = levelData[currentStepIndex]
-        console.log("inside checkUserCode ")
-        console.log(currentStepIndex)
+
         // If it's not a question, just continue
         if (step.type !== "question") return
 
@@ -107,6 +106,22 @@ document.addEventListener("DOMContentLoaded", () => {
         // Check if the user code is equal to the correct question code
         if (userCode == expectedCode) {
           displayMessage(step.run_output_message || "Success! Well done.", true)
+
+          // Append the local storage object (to be used in other pages)
+          const storedCompletions = localStorage.getItem("completedSteps")
+
+          // Parse json string into JS object
+          // Ternary statemnet: If the storedCompletions is not null just parse it to a js object otherwise, initilize an empty object
+          let completedSteps = storedCompletions
+            ? JSON.parse(storedCompletions)
+            : {}
+
+          // Define a key for each step to be stored in local storage
+          const stepKey = `level_${levelId}_step_${currentStepIndex}`
+          completedSteps[stepKey] = true
+
+          // Convert the updated object back to a JSON string and save it
+          localStorage.setItem("completedSteps", JSON.stringify(completedSteps))
         } else {
           displayMessage("Try again :(", false)
         }
@@ -121,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Collapse multiple whitespace characters (spaces, tabs) into a single space
         // The \s+ regex matches one or more whitespace characters.
         newCode = newCode.replace(/\s+/g, " ")
-        newCode = newCode.replace(/\s*([<>])\s*/g, '$1')
+        newCode = newCode.replace(/\s*([<>])\s*/g, "$1")
         newCode = newCode.trim()
         // console.log(newCode)
         return newCode
@@ -134,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Loop through the dots and update the content based on the clicked dot
       dots.forEach((dot) => {
         dot.addEventListener("click", (event) => {
+          // This is used to access a custom data attribute named data-index on the HTML element that triggered an event
           currentStepIndex = event.target.dataset.index
           loadStepContent(currentStepIndex)
           updateNavigationDots(currentStepIndex)

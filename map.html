@@ -52,9 +52,9 @@
         </div>
 
         <div class="node-path-container">
-          <div class="side-node fill"></div>
-          <div class="side-node"></div>
-          <div class="side-node"></div>
+          <div class="side-node" data-level="1" data-q-index="1"></div>
+          <div class="side-node" data-level="1" data-q-index="2"></div>
+          <div class="side-node" data-level="1" data-q-index="3"></div>
           <!-- <div class="side-node"></div> -->
         </div>
       </div>
@@ -74,11 +74,11 @@
       </div>
 
       <div id="node-arm-bottom" class="node-arm">
-        <a href="level-intro.html?level=3" class="main-node-link">
-          <div class="main-node" id="level-3">
+        <div class="main-node" id="level-3">
+          <a href="level-intro.html?level=3" class="main-node-link">
             <div class="text-dark fs-4">Level 3</div>
-          </div>
-        </a>
+          </a>
+        </div>
         <div class="node-path-container">
           <div class="side-node"></div>
           <div class="side-node"></div>
@@ -88,16 +88,43 @@
       </div>
 
       <div id="node-arm-left" class="node-arm">
-        <a href="level-intro.html?level=4" class="main-node-link">
-          <div class="main-node" id="level-4">
+        <div class="main-node" id="level-4">
+          <a href="level-intro.html?level=4" class="main-node-link">
             <div class="text-dark fs-4">Level 4</div>
-          </div>
-        </a>
+          </a>
+        </div>
         <div class="node-path-container">
           <div class="side-node"></div>
           <div class="side-node"></div>
           <div class="side-node"></div>
           <!-- <div class="side-node"></div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Div to handle the character choice -->
+    <div class="character-area">
+      <div class="character-elements">
+        <p>Choose your favorite character</p>
+
+        <div class="characters">
+
+          <button class="char-option" data-char="char1">
+            <img src="./resources/images/char1.png" alt="Char 1 char" />
+          </button>
+
+          <button class="char-option" data-char="char2">
+            <img src="./resources/images/char2.png" alt="Char 2 char" />
+          </button>
+
+          <button class="char-option" data-char="char3">
+            <img src="./resources/images/char3.png" alt="Char 3 char" />
+          </button>
+
+          <button class="char-option" data-char="char4">
+            <img src="./resources/images/char4.png" alt="Char 4 char" />
+          </button>
+
         </div>
       </div>
     </div>
