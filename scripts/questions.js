@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const codeInput = document.getElementById("code-input")
   const charArea = document.getElementById("character-area-show")
   const storedChar = localStorage.getItem("userCharacter")
+  const humorText = document.getElementById("char-humor-text")
+  let humorData = []
 
   let currentStepIndex = 0
   let score = 0
@@ -46,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
           console.log("Inside showChar if stat fun")
           const charElement = document.createElement("img")
           charElement.src = `../resources/images/${storedChar}.png`
-          charElement.classList.add('selected-character-img');
+          charElement.classList.add("selected-character-img")
           charArea.appendChild(charElement)
         }
       }
@@ -161,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
       loadStepContent(currentStepIndex)
       updateNavigationDots(currentStepIndex)
       showChar()
+      displayRandomHumors()
 
       // Loop through the dots and update the content based on the clicked dot
       dots.forEach((dot) => {
@@ -177,4 +180,37 @@ document.addEventListener("DOMContentLoaded", () => {
         checkUserCode()
       })
     })
+
+  // Function to handle humor retreival
+  fetch("../data/humors.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to load humors.")
+      }
+      return response.json()
+    })
+    .then((data) => {
+      // Store the data array globally once
+      humorData = data
+
+      // Display the first humor immediately
+      displayRandomHumors()
+
+      // Start the 30-second loop
+      setInterval(displayRandomHumors, 30000)
+    })
+
+  const displayRandomHumors = () => {
+    fetch("../data/humors.json")
+    // Check if the fetch works or not
+    if (humorData.length === 0) return;
+
+    // Generate random number
+    const randomIndex = Math.floor(Math.random() * humorData.length)
+
+    // Get the humor with the picked index
+    const pickedHumor = humorData[randomIndex]
+    // Update the html
+    humorText.textContent = pickedHumor
+  }
 })
