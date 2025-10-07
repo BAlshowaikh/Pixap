@@ -510,18 +510,8 @@ h6 {
   filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.4));
 }
 
+/* Retrieved from https://projects.verou.me/bubbly/ website */
 #char-speech-bubble {
-  /* Existing Styles
-    background-color: #1f1f1f;
-    color: #ffffff;
-    padding: 10px 15px;
-    border: 2px solid #00cccc;
-    border-radius: 1vh;
-    max-width: 60%;
-
-    /* CRITICAL: Position relative for the tail's absolute positioning
-    position: relative;
-    font-size: 0.9em; */
   position: relative;
   background:  #1f1f1f;
   border-radius: 0.4em;
@@ -542,19 +532,3 @@ h6 {
 	margin-top: 2em;
 	margin-left: -0.9em;
 }
-
-/* Position the tail relative to its parent (#char-speech-bubble)
-    position: absolute;
-
-    /* Center the tail vertically on the left side of the bubble
-    top: 50%;
-    left: -20px;
-    transform: translateY(80%);
-
-    /* Create the triangle pointing
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 20px solid #00cccc;
-
-    /* Ensure the tail is above the bubble's content layer
-    z-index: 1; */
