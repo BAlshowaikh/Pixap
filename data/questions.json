@@ -1,6 +1,5 @@
 {
   "level_1": [
-
     {
       "index": 0,
       "type": "info",
@@ -10,7 +9,6 @@
       "character_hint": "Focus on the big picture before diving into the details. We'll start with the bare minimum.",
       "initial_code": ""
     },
-
     {
       "index": 1,
       "type": "question",
@@ -22,7 +20,6 @@
       "expected_code": "<!doctype html>",
       "run_output_message": "Doctype added successfully. Now add the root element."
     },
-
     {
       "index": 2,
       "type": "question",
@@ -34,7 +31,6 @@
       "expected_code": "<html></html>",
       "run_output_message": "The <html> tag is correct. Next, we need the head and body."
     },
-
     {
       "index": 3,
       "type": "question",
@@ -45,6 +41,139 @@
       "initial_code": "<!DOCTYPE html>\n<html>\n\n</html>",
       "expected_code": "<head></head><body></body>",
       "run_output_message": "You've completed the basic HTML structure! That's Level 1 done!"
+    }
+  ],
+
+  "level_2": [
+    {
+      "index": 0,
+      "type": "info",
+      "step_id": 0,
+      "title": "Level 2: Elements and Nesting",
+      "instruction": "HTML is built on elements (tags) that open with `<>` and close with `</>`. The key is **nesting**: tags must be closed in the reverse order they were opened.",
+      "character_hint": "Think of it like nested dolls. The small one goes in first, but the big one must close last!",
+      "initial_code": ""
+    },
+    {
+      "index": 1,
+      "type": "question",
+      "step_id": 1,
+      "title": "Question 1: The Container Element",
+      "instruction": "Create an 'h1' element with the content: 'Welcome!'",
+      "character_hint": "Remember to close your tags properly: `<h1>...</h1>`",
+      "initial_code": "",
+      "expected_code": "<h1>Welcome!</h1>",
+      "run_output_message": "Correct! Now, let's look at tags that don't need closing."
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "step_id": 2,
+      "title": "Question 2: Void Tags",
+      "instruction": "Void Tags are self-enclosing and don't require a second closing tag. Create an image tag, `<img>`, which is a common void tag.",
+      "character_hint": "Void tags are like lone wolves; they don't need a partner to close them off.",
+      "initial_code": "<h1>Welcome!</h1>\n",
+      "expected_code": "<img src=''>",
+      "run_output_message": "Great! `<img>` is a void tag. Now, let's check your nesting skills."
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "step_id": 3,
+      "title": "Question 3: Correct Nesting",
+      "instruction": "Fix the following incorrect code block by correcting the nesting order (Hint: the `<h3>` tag is improperly closed after the `<a>` tag):",
+      "character_hint": "The last tag opened must be the first one closed within a container.",
+      "initial_code": "<div>\n  <a href=\"#\">\n    <h3>Click here!\n  </a>\n  </h3>\n</div>",
+      "expected_code": "<div><a href=\"#\"><h3>Click here!</h3></a></div>",
+      "run_output_message": "Perfect nesting! Order matters in HTML."
+    }
+  ],
+  "level_3": [
+    {
+      "index": 0,
+      "type": "info",
+      "step_id": 0,
+      "title": "Level 3: Block and Semantic Elements",
+      "instruction": "Block elements (like `div`, `h#`, `p`) create vertical boxes. Semantic elements (like `nav`, `header`, `section`) give meaning to content for better accessibility.",
+      "character_hint": "Semantic tags are crucial for screen readers. Always choose a semantic tag over a `div` when possible!",
+      "initial_code": ""
+    },
+    {
+      "index": 1,
+      "type": "question",
+      "step_id": 1,
+      "title": "Question 1: Basic Block Structure",
+      "instruction": "Create a general container (`div`) and place a paragraph tag (`p`) inside it with the text: 'Hello.'",
+      "character_hint": "Block elements stack vertically, creating a column layout by default.",
+      "initial_code": "",
+      "expected_code": "<div><p>Hello.</p></div>",
+      "run_output_message": "Correct! Now let's try a semantic tag."
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "step_id": 2,
+      "title": "Question 2: Semantic Navigation",
+      "instruction": "Create the appropriate semantic tag used for wrapping navigation links.",
+      "character_hint": "It's short for 'navigation'!",
+      "initial_code": "",
+      "expected_code": "<nav></nav>",
+      "run_output_message": "The `<nav>` tag is correct. Next, let's structure the main content."
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "step_id": 3,
+      "title": "Question 3: Semantic Page Structure",
+      "instruction": "Inside the `<body>`, add a main title area (`header`) followed by a primary content area (`section`).",
+      "character_hint": "The `header` should come first, then the `section` to break up the page.",
+      "initial_code": "<body>\n\n</body>",
+      "expected_code": "<header></header><section></section>",
+      "run_output_message": "Excellent! You've structured your page semantically."
+    }
+  ],
+  "level_4": [
+    {
+      "index": 0,
+      "type": "info",
+      "step_id": 0,
+      "title": "Level 4: Inline Tags and Attributes",
+      "instruction": "Inline elements stack horizontally (like `<a>`, `<span>`). Attributes (like `class`, `id`, `href`) are used within tags to give them properties or links.",
+      "character_hint": "Inline elements don't force a new line. They flow right after the previous content!",
+      "initial_code": ""
+    },
+    {
+      "index": 1,
+      "type": "question",
+      "step_id": 1,
+      "title": "Question 1: The Link Tag (Inline)",
+      "instruction": "Create an Anchor tag (`<a>`) with the text 'Visit Google' inside it.",
+      "character_hint": "The anchor tag is the most important inline element for navigation.",
+      "initial_code": "",
+      "expected_code": "<a>Visit Google</a>",
+      "run_output_message": "That's the basic tag! Now give it a destination."
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "step_id": 2,
+      "title": "Question 2: Adding a Class Attribute",
+      "instruction": "Give the Anchor tag an appropriate attribute to assign it the name 'external-link'.",
+      "character_hint": "Attributes go inside the opening tag, e.g., `<tag attribute=\"value\">`.",
+      "initial_code": "<a>Visit Google</a>",
+      "expected_code": "<a class=\"external-link\">Visit Google</a>",
+      "run_output_message": "Class added! Classes are for applying the same style to multiple elements."
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "step_id": 3,
+      "title": "Question 3: Adding an ID Attribute",
+      "instruction": "Give the entire `<body>` tag an attribute to assign it the unique name 'page-main'.",
+      "character_hint": "The `id` attribute should be unique to that single element.",
+      "initial_code": "<body></body>",
+      "expected_code": "<body id=\"page-main\"></body>",
+      "run_output_message": "You've mastered the fundamentals of HTML structure and attributes! Level complete!"
     }
   ]
 }

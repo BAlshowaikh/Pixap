@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         throw Error(`HTTP error. Status: ${response.status}`)
       }
       // This converts the returned json body into a JS object
+      // console.log(`Response return: ${response.json()}`)
       return response.json()
     })
     .then((data) => {
