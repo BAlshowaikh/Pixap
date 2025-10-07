@@ -410,6 +410,8 @@ h6 {
   border: none;
   resize: none;
   min-height: 40vh;
+  color: white;
+  font-size: 3vh;
 }
 
 #run-code-btn {
@@ -513,22 +515,28 @@ h6 {
 /* Retrieved from https://projects.verou.me/bubbly/ website */
 #char-speech-bubble {
   position: relative;
-  background:  #1f1f1f;
+  background: #1f1f1f;
   border-radius: 0.4em;
-  padding: 8vh;
-  font-size: 2vh;
+  font-size: 2.2vh;
+
+  width: 25vw;
+  height: auto;
+  min-height: 10vh;
+  max-height: 20vh;
+  padding: 2vh 2vw;
+  word-wrap:break-word;
 }
 
 #char-speech-bubble:after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 0.938em solid transparent;
-	border-right-color: #1f1f1f;
-	border-left: 0;
-	margin-top: 2em;
-	margin-left: -0.9em;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20%;
+  width: 0;
+  height: 0;
+  border: 0.938em solid transparent;
+  border-right-color: #1f1f1f;
+  border-left: 0;
+  margin-top: 2em;
+  margin-left: -0.7em;
 }

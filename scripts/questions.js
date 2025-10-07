@@ -8,12 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const scoreHTML = document.getElementById("score")
   const codeInput = document.getElementById("code-input")
   const charArea = document.getElementById("character-area-show")
-  const storedChar = localStorage.getItem("userCharacter")
   const humorText = document.getElementById("char-humor-text")
   let humorData = []
 
+  const storedChar = localStorage.getItem("userCharacter")
+  const storedScore = localStorage.getItem("userScore")
+
   let currentStepIndex = 0
-  let score = 0
+  let score = storedScore ? parseInt(storedScore, 10) : 0
+
+  scoreHTML.textContent = `${score} PX`
 
   // This will hold the level info once it has been fetched
   let levelData = null
@@ -41,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error(`Data for Level ID ${levelId} not found.`)
         return
       }
+
       // Function to handle character retreival
       const showChar = () => {
         console.log("Inside showChar fun")
@@ -181,7 +186,9 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
 
-  // Function to handle humor retreival
+  // ------------------------------------------------------- Function to handle humor retreival ----------------------------------------------------
+  // Note: Why not to put the fetch inside the function?
+  // It's not the best pracice because every 30 seconds the json file will be fetched so rather than doing this, just fetch once and store the data in a global variable
   fetch("../data/humors.json")
     .then((response) => {
       if (!response.ok) {
@@ -196,14 +203,14 @@ document.addEventListener("DOMContentLoaded", () => {
       // Display the first humor immediately
       displayRandomHumors()
 
-      // Start the 30-second loop
+      // Call the function every 30 seconds (change the humor text each 30 s)
       setInterval(displayRandomHumors, 30000)
     })
 
   const displayRandomHumors = () => {
     fetch("../data/humors.json")
     // Check if the fetch works or not
-    if (humorData.length === 0) return;
+    if (humorData.length === 0) return
 
     // Generate random number
     const randomIndex = Math.floor(Math.random() * humorData.length)
