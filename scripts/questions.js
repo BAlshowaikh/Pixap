@@ -49,9 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Function to handle character retreival
       const showChar = () => {
-        console.log("Inside showChar fun")
         if (storedChar != null) {
-          console.log("Inside showChar if stat fun")
           const charElement = document.createElement("img")
           charElement.src = `../resources/images/${storedChar}.png`
           charElement.classList.add("selected-character-img")
@@ -94,7 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Define a function to show the feedback
       const displayMessage = (message, isSuccess) => {
-        console.log("inside display message ")
         messageOverlay.classList.remove("d-none")
         messageText.textContent = message
 
@@ -103,13 +100,14 @@ document.addEventListener("DOMContentLoaded", () => {
           scoreHTML.textContent = ` ${score} PX`
           // Store it so we can access the score from all pages
           localStorage.setItem("userScore", score)
+
           // Show for 5 seconds
           setTimeout(() => {
             messageOverlay.classList.add("d-none")
             advanceStep()
           }, 5000)
         } else {
-          // In case of wrong answer, hide the overlay div
+          // In case of wrong answer
           setTimeout(() => {
             messageOverlay.classList.add("d-none")
           }, 2000)

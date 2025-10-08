@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // * window.location.search is a property that returns the query string portion of the current URL
   const url = new URLSearchParams(window.location.search)
   const levelId = url.get("level")
+  const deployedURL = "https://pixap.surge.sh/"
 
   // Check if the level param is empty
   if (!levelId) {
@@ -26,12 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then((data) => {
       const levelData = data[levelId]
-      console.log(levelData)
 
       if (!levelData) {
         console.error(`Data for Level ID ${levelId} not found.`)
         return
       }
+      // Determine the base URL dynamically:
+      // "http://127.0.0.1:5500" OR "https://pixap.surge.sh"
+
+      const baseURL = window.location.origin
       // If no errors found, update html
       // document.getElementById("level-title").textContent = levelData.title
       document.getElementById("level-paragraph").textContent =
@@ -42,6 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ).textContent = `Level ${levelId}`
       document.getElementById(
         "start-quiz-button"
-      ).href = `http://127.0.0.1:5500/question.html?level=${levelId}`
+      ).href = `${baseURL}/question.html?level=${levelId}`
     })
 })
+
+//`http://127.0.0.1:5500/question.html?level=${levelId}`

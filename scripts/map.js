@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const checkLevelAccess = () => {
     // I should handle the levels once load
     levels.forEach((level) => {
-      // console.log(level)
       const levelId = level.id
       const levelThreshold = levelThresholds[levelId]
 
