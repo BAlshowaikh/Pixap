@@ -1,24 +1,40 @@
 # 🚀 Pixap Game
 Date: 22 - Sep - 2025
 
+# Deployed Version
+[PIXAP](https://pixap.surge.sh)
+
+***
+
 ## 📝 Project Description
 Pixap is a quiz-based game to enhance HTML skills for beginners. It's served as mind map game where each node represents a section of HTML. Each section will have number of corresponding questions. <br>
 
-> ⚙️ Core technology: **HTML, CSS, JS**<br>
+> ⚙️ Core technology: **HTML, CSS, JS, JSON, Bootstrap**<br>
+
+***
 
 ## ✨ Features
-1. **Mind-map: The game follows a creative mind map rather than linera levels.**
+1. **Mind-map: The game follows a creative mind map rather than boring linear levels.**
 2. **Quirky Character: A character that will be with the user in his journey giving some humors.**
-3. **Live time checking: The website will check the user's answers automatically.**
-4. **XP Points: Each level will have a dedicated XP points to unlock the next level.**
+3. **XP Points: Each level will have a dedicated XP points to unlock the next level.**
+4. **Level Access: Each level has a threshold that must be met to be accessed.**
 
-## 💻 How to run
-1. **Step 1:**
-2. **Step 2:**
-3. **Step 3:**
+***
 
-## 📋 Pseudocode 
-1. *Start game: (Not confirmed)*
+## 💻 How to run (Deployment Link Version)
+1. **Step 1**: Open [PIXAP](https://pixap.surge.sh)**
+2. **Step 2:** Enjoy the game!
+
+
+## 💻 How to run ()
+1. **Step 1:** Download or clone the repository.
+2. **Step 2:** Go to `index.html` and start the live server.
+3. **Step 3:** Enjoy the game!
+
+***
+
+## 📋 Pseudocode
+1. *Start game:*
     * Load the user's saved progress
     * Show the main game page which will show the intorduction to the game with "Go to mind map" button.
     * Once the "Go to mind map" button is clicked the user will be taken to the min-map section (on the same page).
@@ -37,14 +53,10 @@ Pixap is a quiz-based game to enhance HTML skills for beginners. It's served as 
     * Show a "Level Complete!" message.
     * Return the player to the mind-map page*
 
-## 🔗 Credits:
-* [Resource one:](Link)
-* [Resource two:](Link)
-* [Resource three:](Link)
+***
 
-## Wireframes:
-![Main page](main-page.png)
-![Mind map section](min-map-section.png)
+## 🔗 Credits:
+* [Resource one:Bubble message style](https://projects.verou.me/bubbly/)
 
 ## 👩‍💻 Author
 This project is created by @BAlshowaikh.<br>
